@@ -13,7 +13,7 @@
         <th>Actions</th>
     </tr>
     <tr th:each="addressBook : ${addresses}">
-        <td th:text="${addressBook.last_name}"></td>
+        <td th:text="${addressBook.lastname}"></td>
         <td th:text="${addressBook.phone}"></td>
         <td>
             <a th:href="@{/update/{id}(id=${addressBook.id})}">Update</a> -
@@ -22,5 +22,22 @@
         </td>
     </tr>
 </table>
+<br />
+<form action="#"
+      th:action="@{/search}"
+      method="post">
+
+    Search Last Names :<input type="text" name="searchName" />
+
+        <br />
+    <input type="submit" value="Submit" />
+</form>
+<form action="#"
+      th:action="@{/}"
+      method="post">
+
+    <br />
+    <input type="submit" value="Return to Main List" />
+</form>
 </body>
 </html>
